@@ -3,7 +3,10 @@ An addon to toggle player titles, guild tags, and player names.
 
 ![image](https://github.com/user-attachments/assets/98fdf749-852a-4989-abe7-cac6046c25e9)
 
+Minimap button!
 ![ptnminimap](https://github.com/user-attachments/assets/72c2b3b5-47ce-4b71-92f2-bdd4fbf40298)
+
+type /ptn if u wanna open the frame instead.
 
 How This Enhances the User Experience
 
