@@ -1,0 +1,9 @@
+## Interface: 11403
+## Title: PlayerTitleNames
+## Notes: An addon to toggle player titles, guild tags, and player names.
+## Author: |cffe6cc80Pegga|r)
+## Website: https://github.com/1broccoli?tab=repositories
+## Version: 1.1
+## SavedVariables: Titles_SavedVariables
+
+PlayerTitleNames.lua
