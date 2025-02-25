@@ -1,6 +1,10 @@
 # playertitlenames
 An addon to toggle player titles, guild tags, and player names.
+
 ![image](https://github.com/user-attachments/assets/98fdf749-852a-4989-abe7-cac6046c25e9)
+
+![ptnminimap](https://github.com/user-attachments/assets/72c2b3b5-47ce-4b71-92f2-bdd4fbf40298)
+
 How This Enhances the User Experience
 
     Accessibility: The checkbox-based interface eliminates the need to remember specific slash commands or syntax, making it accessible for players of all skill levels.
@@ -17,3 +21,4 @@ Why It's Better Than Blizzard's Default Slash Commands
     Visual Feedback: Seeing the checkbox state provides a clear and immediate understanding of the current setting.
     Centralization: All options are grouped together in one panel, rather than requiring multiple commands or menu navigation.
     User-Friendly Design: Particularly helpful for players who are less tech-savvy or those who value efficiency and convenience.
+
