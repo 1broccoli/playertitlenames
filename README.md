@@ -1,9 +1,7 @@
 # playertitlenames
 An addon to toggle player titles, guild tags, and player names.
 
-![wst](https://github.com/user-attachments/assets/0e4de6c3-b884-44f8-a420-736009999d25)
-
-World Text Scale is the damage or healing numbers floating above units bodies, 1.0 is default size. 
+![image](https://github.com/user-attachments/assets/98fdf749-852a-4989-abe7-cac6046c25e9)
 
 Minimap button!
 
@@ -20,7 +18,6 @@ How This Enhances the User Experience
     Convenience: The addon centralizes all related options into one place, avoiding the need to search through the Blizzard interface, which can feel scattered or unintuitive.
 
     Customization Without Hassle: Players can toggle specific aspects of name visibility quickly, tailoring the game to their preferences during gameplay without disrupting their flow.
-    Fun an exciting big damage or healing numbers!
 
 Why It's Better Than Blizzard's Default Slash Commands
 

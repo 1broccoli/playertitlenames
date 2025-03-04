@@ -9,7 +9,7 @@ local savedVariables = {
 
 -- Create main frame
 local PTNe = CreateFrame("Frame", "MyPTN", UIParent, "BackdropTemplate")
-PTNe:SetSize(200, 165)  -- Adjusted size for fewer checkboxes
+PTNe:SetSize(200, 225)  -- Adjusted size for new design
 PTNe:SetPoint("CENTER")
 PTNe:SetBackdrop({
     bgFile = "Interface/Tooltips/UI-Tooltip-Background",
@@ -123,6 +123,55 @@ local nameCheckbox = CreateCheckbox("NameCheckbox", "Show Player Names", PTNe, 1
 local guildCheckbox = CreateCheckbox("GuildCheckbox", "Show Guild Tags", PTNe, 10, -70, "showGuildTags", "UnitNamePlayerGuild", 1, 0)
 local pvpTitleCheckbox = CreateCheckbox("PvPTitleCheckbox", "Show PvP Titles", PTNe, 10, -100, "showPvPTitles", "UnitNamePlayerPVPTitle", 1, 0)
 local ownNameCheckbox = CreateCheckbox("OwnNameCheckbox", "Show Own Name", PTNe, 10, -130, "showOwnName", "UnitNameOwn", 1, 0)
+
+-- Create input box label
+local inputLabel = PTNe:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+inputLabel:SetPoint("TOP", 0, -160)
+inputLabel:SetText("Damage Text Scale")
+
+-- Create input box
+local worldTextScaleInput = CreateFrame("EditBox", "WorldTextScaleInput", PTNe, "InputBoxTemplate")
+worldTextScaleInput:SetSize(50, 20)
+worldTextScaleInput:SetPoint("TOP", 0, -180)
+worldTextScaleInput:SetAutoFocus(false)
+worldTextScaleInput:SetMaxLetters(4)
+worldTextScaleInput:SetText(string.format("%.1f", GetCVar("WorldTextScale") or 1))
+
+-- Allow only numeric input including decimals
+worldTextScaleInput:SetScript("OnTextChanged", function(self)
+    local text = self:GetText()
+    if not tonumber(text) and text ~= "" then
+        self:SetText(text:match("^[0-9]*%.?[0-9]*"))
+    end
+end)
+
+-- Create set button
+local setButton = CreateFrame("Button", "SetButton", PTNe, "UIPanelButtonTemplate")
+setButton:SetSize(50, 20)
+setButton:SetPoint("LEFT", worldTextScaleInput, "RIGHT", 10, 0)
+setButton:SetText("Set")
+
+-- Create indicator text
+local inputValueText = PTNe:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+inputValueText:SetPoint("TOP", worldTextScaleInput, "BOTTOM", 0, -5)
+inputValueText:SetText("Current Value: " .. worldTextScaleInput:GetText())
+
+-- Function to update the console command and indicator text
+local function UpdateWorldTextScale(value)
+    value = tonumber(value)
+    if value and value >= 0.1 and value <= 5 then
+        value = string.format("%.1f", value)
+        SetCVar("WorldTextScale", value)
+        inputValueText:SetText("Current Value: " .. value)  -- Update indicator text
+    else
+        print("Invalid value. Please enter a number between 0.1 and 5.")
+    end
+end
+
+-- Set button script
+setButton:SetScript("OnClick", function()
+    UpdateWorldTextScale(worldTextScaleInput:GetText())
+end)
 
 -- Slash command to toggle frame visibility
 SLASH_PTN1 = "/ptn"

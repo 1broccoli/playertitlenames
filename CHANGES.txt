@@ -1,0 +1,44 @@
+commit d54167afe5e2cea2631a4c69442900f92f5da1e1
+Author: Broccoli <138363916+1broccoli@users.noreply.github.com>
+Date:   Mon Feb 24 17:57:57 2025 -0700
+
+    Update README.md
+
+commit cd72a74ee3b6cc9cc7fe4d27aaeb9acc8164815b
+Author: Broccoli <138363916+1broccoli@users.noreply.github.com>
+Date:   Mon Feb 24 17:53:33 2025 -0700
+
+    Update README.md
+
+commit 2bd78c637bed8ff4dd8bf6dab77e77423a1fc998
+Author: Broccoli <138363916+1broccoli@users.noreply.github.com>
+Date:   Mon Feb 24 17:53:25 2025 -0700
+
+    Update README.md
+
+commit e06aa9e568f3812590cf1143597359b74ae8bca8
+Author: Broccoli <138363916+1broccoli@users.noreply.github.com>
+Date:   Mon Feb 24 17:52:56 2025 -0700
+
+    Update README.md
+
+commit 8df8de742a6b41f10014b16ad211e9639fdfdd54
+Author: Broccoli <138363916+1broccoli@users.noreply.github.com>
+Date:   Mon Feb 24 17:52:24 2025 -0700
+
+    Add files via upload
+    
+    Added minimap button for easier access! Also LibDBIcon-1.0 used to make this possible!
+
+commit 1f83733ad04d47cb51fd30c0563aaba47bf3a083
+Author: Broccoli <138363916+1broccoli@users.noreply.github.com>
+Date:   Wed Jan 8 23:29:57 2025 -0700
+
+    Update README.md
+
+commit ca019266ffc457f11600224a5bd749009371f786
+Author: Broccoli <138363916+1broccoli@users.noreply.github.com>
+Date:   Wed Jan 8 23:16:13 2025 -0700
+
+    Initial commit
+
