@@ -1,18 +1,1 @@
-lightweight tag 92a22ae22afba48842cb4e28209b1577f26275f3 PlayerTitleNames-1.3
-Author:	GitHub <noreply@github.com>
-Date:	Mon Mar 3 19:20:17 2025 -0700
-
-commit 92a22ae22afba48842cb4e28209b1577f26275f3
-Author: Broccoli <138363916+1broccoli@users.noreply.github.com>
-Date:   Mon Mar 3 19:20:17 2025 -0700
-
-    Add files via upload
-    
-    world text scale (damage and healing text size) added. Thank mageroo crusader strike horde for this idea.
-
-commit 0fc81eff3de38c4190a1ed66999fd5f4377ff5d4
-Author: Broccoli <138363916+1broccoli@users.noreply.github.com>
-Date:   Mon Mar 3 19:19:21 2025 -0700
-
-    Update README.md
-
+version 1.4 updated check box load states
