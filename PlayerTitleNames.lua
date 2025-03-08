@@ -186,11 +186,14 @@ end
 -- Event handler to load saved variables
 local eventFrame = CreateFrame("Frame")
 eventFrame:RegisterEvent("ADDON_LOADED")
+eventFrame:RegisterEvent("PLAYER_LOGOUT")
 eventFrame:SetScript("OnEvent", function(self, event, arg1)
-    if arg1 == addonName then
+    if event == "ADDON_LOADED" and arg1 == addonName then
         -- Load saved variables
         if TitlesSavedVariables then
-            savedVariables = TitlesSavedVariables
+            for k, v in pairs(TitlesSavedVariables) do
+                savedVariables[k] = v
+            end
         else
             TitlesSavedVariables = savedVariables
         end
@@ -205,13 +208,8 @@ eventFrame:SetScript("OnEvent", function(self, event, arg1)
             minimapButtonDB = TitlesSavedVariables.minimapButtonDB
             icon:Refresh("PlayerTitleNames", minimapButtonDB)
         end
-    end
-end)
-
--- Save variables on logout
-eventFrame:RegisterEvent("PLAYER_LOGOUT")
-eventFrame:SetScript("OnEvent", function(self, event)
-    if event == "PLAYER_LOGOUT" then
+    elseif event == "PLAYER_LOGOUT" then
+        -- Save variables on logout
         TitlesSavedVariables = savedVariables
         TitlesSavedVariables.minimapButtonDB = minimapButtonDB
     end

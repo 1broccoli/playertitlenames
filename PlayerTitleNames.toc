@@ -4,6 +4,6 @@
 ## Author: |cffe6cc80Pegga|r)
 ## Website: https://github.com/1broccoli?tab=repositories
 ## Version: 1.3
-## SavedVariables: Titles_SavedVariables
+## SavedVariables: TitlesSavedVariables
 
 PlayerTitleNames.lua
