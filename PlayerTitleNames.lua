@@ -5,6 +5,7 @@ local savedVariables = {
     showPlayerNames = true,
     showPvPTitles = true,
     showOwnName = true,
+    worldTextScale = 1,  -- Add worldTextScale to saved variables
 }
 
 -- Create main frame
@@ -31,7 +32,6 @@ local titleText = PTNe:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
 titleText:SetPoint("TOP", 0, -10)
 titleText:SetText("Player Title Names")
 titleText:SetTextColor(1, 0.4, 0.8)  -- Pinkish-purple
-
 
 -- Create close button
 local closeButton = CreateFrame("Button", nil, PTNe)
@@ -135,7 +135,7 @@ worldTextScaleInput:SetSize(50, 20)
 worldTextScaleInput:SetPoint("TOP", 0, -180)
 worldTextScaleInput:SetAutoFocus(false)
 worldTextScaleInput:SetMaxLetters(4)
-worldTextScaleInput:SetText(string.format("%.1f", GetCVar("WorldTextScale") or 1))
+worldTextScaleInput:SetText(string.format("%.1f", savedVariables.worldTextScale or 1))  -- Load saved value
 
 -- Allow only numeric input including decimals
 worldTextScaleInput:SetScript("OnTextChanged", function(self)
@@ -162,6 +162,7 @@ local function UpdateWorldTextScale(value)
     if value and value >= 0.1 and value <= 5 then
         value = string.format("%.1f", value)
         SetCVar("WorldTextScale", value)
+        savedVariables.worldTextScale = value  -- Save the value
         inputValueText:SetText("Current Value: " .. value)  -- Update indicator text
     else
         print("Invalid value. Please enter a number between 0.1 and 5.")
@@ -208,6 +209,10 @@ eventFrame:SetScript("OnEvent", function(self, event, arg1)
             minimapButtonDB = TitlesSavedVariables.minimapButtonDB
             icon:Refresh("PlayerTitleNames", minimapButtonDB)
         end
+
+        -- Load world text scale value
+        worldTextScaleInput:SetText(string.format("%.1f", savedVariables.worldTextScale or 1))
+        inputValueText:SetText("Current Value: " .. worldTextScaleInput:GetText())
     elseif event == "PLAYER_LOGOUT" then
         -- Save variables on logout
         TitlesSavedVariables = savedVariables

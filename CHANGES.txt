@@ -1,1 +1,1 @@
-version 1.4 updated check box load states
+v 1.5 -- damage text scale has been added to saved variables and should now properly load with the number it is set at.
