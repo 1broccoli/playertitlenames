@@ -204,6 +204,13 @@ eventFrame:SetScript("OnEvent", function(self, event, arg1)
         pvpTitleCheckbox:SetChecked(savedVariables.showPvPTitles)
         ownNameCheckbox:SetChecked(savedVariables.showOwnName)
         
+        -- Set CVar for own name based on saved variable
+        if savedVariables.showOwnName then
+            SetCVar("UnitNameOwn", 1)
+        else
+            SetCVar("UnitNameOwn", 0)
+        end
+
         -- Load minimap button position
         if TitlesSavedVariables.minimapButtonDB then
             minimapButtonDB = TitlesSavedVariables.minimapButtonDB
