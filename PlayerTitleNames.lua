@@ -207,8 +207,29 @@ eventFrame:SetScript("OnEvent", function(self, event, arg1)
         -- Set CVar for own name based on saved variable
         if savedVariables.showOwnName then
             SetCVar("UnitNameOwn", 1)
+            ownNameCheckbox.Text:SetTextColor(1, 1, 0)  -- Yellow
         else
             SetCVar("UnitNameOwn", 0)
+            ownNameCheckbox.Text:SetTextColor(0.5, 0.5, 0.5)  -- Gray
+        end
+
+        -- Update text colors for other checkboxes
+        if savedVariables.showPlayerNames then
+            nameCheckbox.Text:SetTextColor(1, 1, 0)  -- Yellow
+        else
+            nameCheckbox.Text:SetTextColor(0.5, 0.5, 0.5)  -- Gray
+        end
+
+        if savedVariables.showGuildTags then
+            guildCheckbox.Text:SetTextColor(1, 1, 0)  -- Yellow
+        else
+            guildCheckbox.Text:SetTextColor(0.5, 0.5, 0.5)  -- Gray
+        end
+
+        if savedVariables.showPvPTitles then
+            pvpTitleCheckbox.Text:SetTextColor(1, 1, 0)  -- Yellow
+        else
+            pvpTitleCheckbox.Text:SetTextColor(0.5, 0.5, 0.5)  -- Gray
         end
 
         -- Load minimap button position
