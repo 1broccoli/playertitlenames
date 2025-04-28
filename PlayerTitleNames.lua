@@ -198,39 +198,26 @@ eventFrame:SetScript("OnEvent", function(self, event, arg1)
         else
             TitlesSavedVariables = savedVariables
         end
+
         -- Update checkbox states
         nameCheckbox:SetChecked(savedVariables.showPlayerNames)
         guildCheckbox:SetChecked(savedVariables.showGuildTags)
         pvpTitleCheckbox:SetChecked(savedVariables.showPvPTitles)
         ownNameCheckbox:SetChecked(savedVariables.showOwnName)
-        
-        -- Set CVar for own name based on saved variable
-        if savedVariables.showOwnName then
-            SetCVar("UnitNameOwn", 1)
-            ownNameCheckbox.Text:SetTextColor(1, 1, 0)  -- Yellow
-        else
-            SetCVar("UnitNameOwn", 0)
-            ownNameCheckbox.Text:SetTextColor(0.5, 0.5, 0.5)  -- Gray
-        end
 
-        -- Update text colors for other checkboxes
-        if savedVariables.showPlayerNames then
-            nameCheckbox.Text:SetTextColor(1, 1, 0)  -- Yellow
-        else
-            nameCheckbox.Text:SetTextColor(0.5, 0.5, 0.5)  -- Gray
-        end
+        -- Apply saved variables to CVars
+        SetCVar("UnitNameFriendlyPlayerName", savedVariables.showPlayerNames and 1 or 0)
+        SetCVar("UnitNamePlayerGuild", savedVariables.showGuildTags and 1 or 0)
+        SetCVar("UnitNamePlayerPVPTitle", savedVariables.showPvPTitles and 1 or 0)
+        SetCVar("UnitNameOwn", savedVariables.showOwnName and 1 or 0)
+        SetCVar("WorldTextScale", savedVariables.worldTextScale or 1)
 
-        if savedVariables.showGuildTags then
-            guildCheckbox.Text:SetTextColor(1, 1, 0)  -- Yellow
-        else
-            guildCheckbox.Text:SetTextColor(0.5, 0.5, 0.5)  -- Gray
-        end
+        -- Update text colors for checkboxes
+        nameCheckbox.Text:SetTextColor(savedVariables.showPlayerNames and 1 or 0.5, savedVariables.showPlayerNames and 1 or 0.5, 0)
+        guildCheckbox.Text:SetTextColor(savedVariables.showGuildTags and 1 or 0.5, savedVariables.showGuildTags and 1 or 0.5, 0)
+        pvpTitleCheckbox.Text:SetTextColor(savedVariables.showPvPTitles and 1 or 0.5, savedVariables.showPvPTitles and 1 or 0.5, 0)
+        ownNameCheckbox.Text:SetTextColor(savedVariables.showOwnName and 1 or 0.5, savedVariables.showOwnName and 1 or 0.5, 0)
 
-        if savedVariables.showPvPTitles then
-            pvpTitleCheckbox.Text:SetTextColor(1, 1, 0)  -- Yellow
-        else
-            pvpTitleCheckbox.Text:SetTextColor(0.5, 0.5, 0.5)  -- Gray
-        end
 
         -- Load minimap button position
         if TitlesSavedVariables.minimapButtonDB then
